@@ -1,0 +1,11 @@
+<div class="right">
+<a href="/">home</a> ||
+<% if !logged_in? %>
+  <a id="login-link" href="/sessions/login">Login</a> ||
+  <a id='register-link'href="/users/new">Register</a> ||
+<% else %>
+  <a href="/users/<%= current_user.id %>"><%= current_user.username %></a> ||
+  <a id='logout-link' href="/sessions/logout">logout</a> ||
+  <a href="/questions/new">Ask Question</a>
+<% end %>
+</div>
